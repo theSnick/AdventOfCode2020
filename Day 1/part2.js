@@ -3,16 +3,14 @@
 let found = false;
 
 for (var i = 0; i < data.length; i++){
-  let remainder = 2020 - data[i];
 
   for (var j = 0; j < data.length; j++){
-    let secondRemainder = remainder - data[j];
+    let remainder = 2020 - data[i] - data[j];
 
-    found = data.includes(secondRemainder);
+    found = data.includes(remainder);
 
     if (found) {
-      console.log(data[i], data[j], secondRemainder);
-      document.write("<br>The answer to part 2 is: " + (data[i] * data[j] * secondRemainder));
+      document.write("<br>The answer to part 2 is: " + (data[i] * data[j] * remainder));
       break;
     }
   }
